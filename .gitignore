@@ -1,0 +1,16 @@
+venv
+.ipynb_checkpoints
+__pycache__
+**/lightning_logs
+**/predictions/
+**/runs_transfer_learning/
+**/runs_baseline/
+**/training_checkpoints/
+**/finetuning_checkpoints/
+**/.DS_Store
+**.out
+**.sh
+*checkpoint*
+*transformed_cases*
+*baseline.csv*
+*runs_baseline*

@@ -1,4 +1,4 @@
-# Code Respository - Optimizing ODE-derived Synthetic Data for Transfer Learning in Dynamical Biological Systems
+# Code Repository - Optimizing ODE-derived Synthetic Data for Transfer Learning in Dynamical Biological Systems
 
 This code repository provides the necessary tools to reproduce the findings from Zabbarov et al. on optimizing synthetic datasets characteristics for a simulation-based transfer learning approach to predicting dynamical biological systems.
 

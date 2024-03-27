@@ -6,9 +6,9 @@ This code repository provides the necessary tools to reproduce the findings from
 
 ## Installation
 
-To run the code, please setup a new environment and install the required dependencies:
+To run the code, please setup a new environment and install the required dependencies, i.e. using pip:
 ```
-pip install dev_requirements.txt
+pip install -r dev_requirements.txt
 ```
 Please call each script from the root directory of this repository.
 

@@ -149,5 +149,5 @@ for seed in tqdm(seeds, leave=False, desc="Seed", position=0):
                     atol=1e-8,
                     rtol=1e-5,
                 )
-
-                generators.TimeSeriesGenerator(sm).generate_csvs(size_value, os.getcwd() + f"/synthetic/{size_key}_{ic_key}_{kp_key}_S{seed}")
+                print(os.getcwd() + f"src/data/algae-rotifers/synthetic/{size_key}_{ic_key}_{kp_key}_S{seed}")
+                generators.TimeSeriesGenerator(sm).generate_csvs(size_value, os.getcwd() + f"/src/data/algae-rotifers/synthetic/{size_key}_{ic_key}_{kp_key}_S{seed}")

@@ -6,7 +6,7 @@ This code repository provides the necessary tools to reproduce the findings from
 
 ## Installation
 
-To run the code, please setup a new environment and install the required dependencies, i.e. using pip:
+To run the code, please set up a new environment with Python 3.10 or later and install the required dependencies, i.e. using pip:
 ```
 pip install -r dev_requirements.txt
 ```
@@ -18,3 +18,24 @@ Please call each script from the root directory of this repository.
 - Transfer Learning and Deep Learning: The code to run the multivariate transfer learning experiments and the DL baseliens for each biological system is contained in `src/experiments/julian/`.
 - DL models: The small and large architecture DL models are defined as plugins for SimbaML in `src/models`.
 - ODE calibration: The code used to calibrate the ODEs for each each biological system is contained in `src/experiments/simon/`.
+
+## Quickstart
+
+### Generation of ODE-derived Synthetic Datasets
+
+For each of the experiments, we provide a Python script to generate synthetic datasets from the respective ODE model. You can start the data generation process by calling the following files in the `/data`-folder:
+
+Data Generation with SIR model for COVID-19 experiments:
+```
+python src/data/covid/sir.py
+```
+
+Data Generation with SAR model for rotifers-algae experiments:
+```
+python src/data/algae-rotifers/rosenbaum.py
+```
+
+Data Generation with LV model for lynx-hares experiments:
+```
+python src/data/lynx-hares/lotka_volterra.py
+```

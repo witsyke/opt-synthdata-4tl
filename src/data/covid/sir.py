@@ -1,10 +1,12 @@
+import os
 import random
+
 import numpy as np
 from tqdm import tqdm
+
 from simba_ml.simulation import system_model
 from simba_ml.simulation import species
 from simba_ml.simulation import noisers
-
 from simba_ml.simulation import constraints
 from simba_ml.simulation import distributions
 from simba_ml.simulation import sparsifier as sparsifier_module
@@ -93,4 +95,4 @@ for seed in tqdm(seeds, leave=False, desc="Seed", position=0):
                         timestamps=distributions.Constant(100),
                     )
                 )
-                generators.TimeSeriesGenerator(sm).generate_csvs(size_value, os.getcwd() + f"/synthetic/{size_key}_{ic_key}_{kp_key}_S{seed}")
+                generators.TimeSeriesGenerator(sm).generate_csvs(size_value, os.getcwd() + f"/src/data/covid/synthetic/{size_key}_{ic_key}_{kp_key}_S{seed}")

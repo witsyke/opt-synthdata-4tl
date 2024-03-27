@@ -163,7 +163,6 @@ class PytorchLightningWandbModel(model.Model):
         Args:
             train: training data.
         """
-        print(train)
         train = [array.astype(np.float32) for array in train]
         if self.model_params.normalize:
             train = self.normalizer.normalize_train_data(train, self.time_series_params)
@@ -171,15 +170,13 @@ class PytorchLightningWandbModel(model.Model):
             train, self.time_series_params
         )
         train_data = list(zip(X_train, y_train))
-        print("\nLength of dataset before splitting into train and validation set:", len(train_data))
-        print(X_train.shape)
         train_loader: utils.data.DataLoader[
             torch.FloatTensor  # pylint: disable=no-member
         ] = utils.data.DataLoader(
             train_data[:int(len(train_data) * 0.9)],  # type: ignore[arg-type]
             batch_size=self.model_params.training_params.batch_size,
             shuffle=False,
-            num_workers=1,
+            num_workers=0,
         )
         val_loader: utils.data.DataLoader[
             torch.FloatTensor  # pylint: disable=no-member
@@ -187,10 +184,8 @@ class PytorchLightningWandbModel(model.Model):
             train_data[int(len(train_data) * 0.9):],  # type: ignore[arg-type]
             batch_size=self.model_params.training_params.batch_size,
             shuffle=False,
-            num_workers=1,
+            num_workers=0,
         )
-        print("Length of train dataset:", len(train_loader.dataset))
-        print("Length of validation dataset:", len(val_loader.dataset), "\n")
         self.start_trainer(train_loader, val_loader=val_loader)
 
     def start_trainer(

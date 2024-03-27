@@ -35,8 +35,8 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
                 }
             },
@@ -47,8 +47,8 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
                 }
             },
@@ -59,8 +59,8 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
                 }
             },
@@ -71,8 +71,8 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
                 }
             }

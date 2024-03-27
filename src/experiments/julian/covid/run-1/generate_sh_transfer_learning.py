@@ -27,7 +27,7 @@ def generate_bash_script(folders):
                 f"echo simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
             script_lines.append(
-                f"srun simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
+                f"simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
 
     bash_script = "#!/bin/bash\n\n"

@@ -5,8 +5,6 @@ __pycache__
 **/predictions/
 **/runs_transfer_learning/
 **/runs_baseline/
-**/training_checkpoints/
-**/finetuning_checkpoints/
 **/.DS_Store
 **.out
 **.sh

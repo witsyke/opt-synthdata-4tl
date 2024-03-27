@@ -42,8 +42,8 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
                     }
                 },
@@ -56,8 +56,8 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
                     }
                 },
@@ -70,8 +70,8 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
                     }
                 },
@@ -84,8 +84,8 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
                     }
                 }

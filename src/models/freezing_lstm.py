@@ -15,7 +15,7 @@ from simba_ml.prediction.time_series.config import (
     time_series_config,
 )
 from simba_ml.prediction.time_series.models import model_to_transfer_learning_model
-from models import pytorch_lightning_wandb
+from src.models import pytorch_lightning_wandb
 
 
 @dataclasses.dataclass

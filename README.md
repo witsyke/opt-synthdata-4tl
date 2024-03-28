@@ -1,6 +1,6 @@
 # Optimizing ODE-derived Synthetic Data for Transfer Learning in Dynamical Biological Systems
 
-This code repository provides the necessary tools to reproduce the findings from Zabbarov et al. on optimizing synthetic datasets characteristics for a simulation-based transfer learning approach to predicting dynamical biological systems.
+This code repository provides the necessary tools to reproduce the findings from Zabbarov et al. on optimizing synthetic dataset characteristics for a simulation-based transfer learning approach to predicting dynamical biological systems.
 
 ![Overview of Experimental Setup](figures/visual_abstract.png)
 
@@ -14,7 +14,7 @@ Please call each script from the root directory of this repository.
 
 ## Structure of Repository
 
-- Datasets: The datasets for the rotifers-algae, lynx-hares and COVID-19 experiments are provided in `/src/data`. Here, we also provide the scripts for generating syntehtic datasets from the calibrated ODE models. For further details, see the README.mds in the respective folders.
+- Datasets: The datasets for the rotifers-algae, lynx-hares and COVID-19 experiments are provided in `/src/data`. Here, we also provide the scripts for generating synthetic datasets from the calibrated ODE models. For further details, see the README.mds in the respective folders.
 - Transfer Learning and Deep Learning Experiments: The code to run and evaluate the transfer learning and deep learning experiments for each biological system is contained in `/src/experiments/julian`. The folder has the following structure:
     - algae-rotifers (coherent) w/ small DL model architecture: `/algae-rotifers/run-1`
     - algae-rotifers (coherent) w/ large DL model architecture: `/algae-rotifers/run-4`
@@ -25,7 +25,7 @@ Please call each script from the root directory of this repository.
     - lynx-hares w/ small DL model architecture: `/algae-rotifers/run-10`
     - lynx-hares w/ large DL model architecture: `/algae-rotifers/run-18`
     - `evaluation.ipynb` notebook provides the code used to evaluate the experiments. The results from the experiments are loaded from the `/results` folder.
-    - You can use the `preprocessing_results...` notebooks to proprocess the results after running the experiments again. 
+    - You can use the `preprocessing_results...` notebooks to preprocess the results after running the experiments again. 
 - DL models: The small and large architecture DL models are defined as plugins for SimbaML in `/src/models`.
 - Custom Metrics: You can define custom evaluation metrics in the `/src/metrics` folder.
 - ODE calibration: The code used to calibrate the ODEs for each each biological system is contained in `/src/experiments/simon`.

@@ -2,7 +2,9 @@ import toml
 import os
 
 # Define the path to the output directory
-experiment_directory = os.getcwd() + "/src/experiments/julian/algae-rotifers/run-8/runs_baseline"
+experiment_directory = (
+    os.getcwd() + "/src/experiments/julian/algae-rotifers/run-8/runs_baseline"
+)
 
 # Loop through all files in the observed folder
 for seed in [10, 17, 42, 93, 97]:
@@ -35,10 +37,10 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
-                }
+                },
             },
             {
                 "id": "PytorchLightningGRUNeuralNetwork",
@@ -47,10 +49,10 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
-                }
+                },
             },
             {
                 "id": "PytorchLightningConvolutionalNeuralNetwork",
@@ -59,10 +61,10 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
-                }
+                },
             },
             {
                 "id": "PytorchLightningCustomDenseNeuralNetwork",
@@ -71,23 +73,23 @@ for seed in [10, 17, 42, 93, 97]:
                     "epochs": 20,
                     "learning_rate": 0.001,
                     "batch_size": 64,
-                    "accelerator": "auto",
-                    "show_progress_bar": False,
+                    "accelerator": "cpu",
+                    "show_progress_bar": True,
                     "patience": 5,
-                }
-            }
+                },
+            },
         ],
         "data": {
-                "synthetic": "/src/data/algae-rotifers/real-world/algae-rotifers-incoherent",
-                "test_split": 0.76,
-                "split_axis": "vertical",
-                "time_series": {
-                    "input_features": ["algae", "rotifers"],
-                    "output_features": ["rotifers"],
-                    "input_length": 3,
-                    "output_length": 3,
-                }
-        }, 
+            "synthetic": "/src/data/algae-rotifers/real-world/algae-rotifers-incoherent",
+            "test_split": 0.76,
+            "split_axis": "vertical",
+            "time_series": {
+                "input_features": ["algae", "rotifers"],
+                "output_features": ["rotifers"],
+                "input_length": 3,
+                "output_length": 3,
+            },
+        },
     }
     # Write the TOML data to a file with the same name as the observed data file
     toml_filename = "S" + str(seed)

@@ -1,7 +1,7 @@
 import os
 
 # define the path to the output directory for the generated bash script
-experiment_directory = os.getcwd() + "src/experiments/julian/algae-rotifers/run-5/"
+experiment_directory = os.getcwd() + "/src/experiments/julian/algae-rotifers/run-5/"
 
 # name the bash script
 bash_script_name = "run_baseline.sh"

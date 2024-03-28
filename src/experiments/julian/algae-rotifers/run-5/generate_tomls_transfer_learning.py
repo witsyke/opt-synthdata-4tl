@@ -5,12 +5,14 @@ import os
 synthetic_folder = "src/data/algae-rotifers/synthetic"
 
 # Define the path to the output directory
-experiment_directory = os.getcwd() + "/src/experiments/julian/algae-rotifers/run-5/runs_transfer_learning"
+experiment_directory = (
+    "/src/experiments/julian/algae-rotifers/run-5/runs_transfer_learning"
+)
 
 # Loop through all files in the observed folder
 for filename in os.listdir(synthetic_folder):
     if filename.startswith("TS1"):
-        seed = int(filename.split('_S')[1])
+        seed = int(filename.split("_S")[1])
         # Create a new TOML file with the modified observed path
         toml_data = {
             "plugins": [
@@ -42,10 +44,10 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
-                    }
+                    },
                 },
                 {
                     "id": "PytorchLightningTransferLearningCustomDenseNeuralNetwork",
@@ -56,10 +58,10 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
-                    }
+                    },
                 },
                 {
                     "id": "PytorchLightningTransferLearningLSTMNeuralNetwork",
@@ -70,10 +72,10 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
-                    }
+                    },
                 },
                 {
                     "id": "PytorchLightningTransferLearningGRUNeuralNetwork",
@@ -84,29 +86,28 @@ for filename in os.listdir(synthetic_folder):
                         "learning_rate": 0.001,
                         "finetuning_learning_rate": 0.0001,
                         "batch_size": 64,
-                        "accelerator": "auto",
-                        "show_progress_bar": False,
+                        "accelerator": "cpu",
+                        "show_progress_bar": True,
                         "patience": 5,
-                    }
-                }
+                    },
+                },
             ],
             "data": {
-                    "synthetic": os.path.join("/", synthetic_folder, filename),
-                    "observed": "/src/data/algae-rotifers/real-world/algae-rotifers-incoherent",
-                    "test_split": 0.76,
-                    "split_axis": "vertical",
-                    "time_series": {
-                        "input_features": ["algae", "rotifers"],
-                        "output_features": ["rotifers"],
-                        "input_length": 3,
-                        "output_length": 3,
-                    }
+                "synthetic": os.path.join("/", synthetic_folder, filename),
+                "observed": "/src/data/algae-rotifers/real-world/algae-rotifers-incoherent",
+                "test_split": 0.76,
+                "split_axis": "vertical",
+                "time_series": {
+                    "input_features": ["algae", "rotifers"],
+                    "output_features": ["rotifers"],
+                    "input_length": 3,
+                    "output_length": 3,
+                },
             },
-            
         }
         # Write the TOML data to a file with the same name as the observed data file
         toml_filename = os.path.splitext(filename)[0]
-        output_folder = experiment_directory + "/" + toml_filename
+        output_folder = os.getcwd() + experiment_directory + "/" + toml_filename
         output_path = output_folder + "/" + "transfer.toml"
         if not os.path.exists(output_folder):
             # Create a new directory because it does not exist

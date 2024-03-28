@@ -4,7 +4,7 @@ import os
 synthetic_folder = "src/data/algae-rotifers/synthetic"
 
 # define the path to the output directory for the generated bash script
-experiment_directory = "/src/experiments/julian/algae-rotifers/run-4/"
+experiment_directory = os.getcwd() + "/src/experiments/julian/algae-rotifers/run-4/"
 
 # name the bash script
 bash_script_name = "run_multivariate.sh"
@@ -16,7 +16,9 @@ def generate_bash_script(folders):
     for folder in folders:
         if str(folder).startswith("TS") and not str(folder).startswith("TS10000"):
             output_path = os.path.join(
-                "src/experiments/julian/algae-rotifers/run-4/runs_transfer_learning", folder, "transfer.csv"
+                "src/experiments/julian/algae-rotifers/run-4/runs_transfer_learning",
+                folder,
+                "transfer.csv",
             )
             config_path = os.path.join(
                 "src/experiments/julian/algae-rotifers/run-4/runs_transfer_learning",
@@ -27,7 +29,7 @@ def generate_bash_script(folders):
                 f"echo simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
             script_lines.append(
-                f"srun simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
+                f"simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
 
     bash_script = "#!/bin/bash\n\n"

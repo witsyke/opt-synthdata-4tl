@@ -16,7 +16,9 @@ def generate_bash_script(folders):
     for folder in folders:
         if str(folder).startswith("TS") and not str(folder).startswith("TS10000"):
             output_path = os.path.join(
-                "src/experiments/julian/algae-rotifers/run-5/runs_transfer_learning", folder, "transfer.csv"
+                "src/experiments/julian/algae-rotifers/run-5/runs_transfer_learning",
+                folder,
+                "transfer.csv",
             )
             config_path = os.path.join(
                 "src/experiments/julian/algae-rotifers/run-5/runs_transfer_learning",
@@ -27,7 +29,7 @@ def generate_bash_script(folders):
                 f"echo simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
             script_lines.append(
-                f"srun simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
+                f"simba_ml start-prediction transfer_learning --output-path {output_path} --config-path {config_path}"
             )
 
     bash_script = "#!/bin/bash\n\n"

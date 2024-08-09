@@ -87,7 +87,7 @@ sh src/experiments/julian/covid/run-1/run_multivariate.sh
 
 You find the prediction results for the deep learning and transfer learning experiments in the `/runs_baseline` and `run_transfer_learning` folder, respectively. Note that you might have to adjust PyTorch Lightning's internal `num_worker` depending on the architecture on which the experiments are executed to speed up the training process.
 
-### Citation
+# Citation
 If you use our pipeline from this repository and its code, please cite our preprint Zabbarov & Witzke et al., 2024:
 
 Julian Zabbarov, Simon Witzke, Maximilian Kleissl, Pascal Iversen, Bernhard Y. Renard, Katharina Baum
